@@ -187,10 +187,29 @@
     }
 
     .hero-sub{
-      margin:0 0 20px;
+      margin:0 0 18px;
       color:var(--muted);
       max-width:58ch;
       font-size:1.05rem;
+    }
+
+    .hero-guest{
+      margin:0 0 18px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.04);
+      font-weight:700;
+    }
+
+    .hero-dates{
+      margin:0 0 22px;
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.04);
+      color:var(--text);
+      font-weight:600;
     }
 
     .hero-pills{
@@ -340,12 +359,14 @@
     .meta-text{
       color:var(--text);
       font-size:.98rem;
+      white-space:pre-line;
     }
 
     .show-note{
       color:var(--muted);
       font-size:.95rem;
       margin:0 0 14px;
+      white-space:pre-line;
     }
 
     .show-actions{
@@ -394,6 +415,7 @@
       margin:0;
       color:var(--muted);
       font-size:.96rem;
+      white-space:pre-line;
     }
 
     .common-grid{
@@ -420,6 +442,7 @@
     .common-value{
       font-size:.98rem;
       color:var(--text);
+      white-space:pre-line;
     }
 
     .cta-panel{
@@ -433,6 +456,7 @@
       margin:0 auto 18px;
       max-width:58ch;
       color:var(--muted);
+      white-space:pre-line;
     }
 
     .footer{
@@ -448,6 +472,11 @@
       gap:16px;
       border-top:1px solid var(--line);
       padding-top:20px;
+    }
+
+    .footer-inner a{
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     @media (max-width: 980px){
@@ -510,27 +539,47 @@
           >Chuck Berry生誕100周年 / Tokyo 2026</span>
 
           <h1
-            data-ja="2つの夜、ひとつのルーツ。"
-            data-en="Two Nights. One Legacy."
-          >2つの夜、ひとつのルーツ。</h1>
+            data-ja="チャック・ベリー生誕100周年記念ライブ 東京2公演"
+            data-en="Chuck Berry Centennial Live Tokyo Two-Night Series"
+          >チャック・ベリー生誕100周年記念ライブ 東京2公演</h1>
 
           <p
             class="hero-sub"
-            data-ja="Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。"
-            data-en="To commemorate the 100th anniversary of Chuck Berry’s birth, we are presenting a two-show series in Tokyo. Rooted in respect for the origin of rock ’n’ roll, each night offers a different venue, lineup, and atmosphere to experience this legacy in two distinct ways."
+            data-ja="Chuck Berry生誕100周年を記念した東京2公演です。&#10;5月15日と5月16日に、それぞれ異なる会場・出演者で開催します。&#10;Chuck Berryの孫であるCharles Berry（Chuck Berry III）がスペシャルゲストとして出演します。"
+            data-en="A two-show Tokyo series celebrating the 100th anniversary of Chuck Berry. The performances take place on May 15 and May 16 with different venues and lineups. Charles Berry (Chuck Berry III), Chuck Berry’s grandson, appears as the special guest."
           >
-            Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。
+            Chuck Berry生誕100周年を記念した東京2公演です。
+            5月15日と5月16日に、それぞれ異なる会場・出演者で開催します。
+            Chuck Berryの孫であるCharles Berry（Chuck Berry III）がスペシャルゲストとして出演します。
           </p>
+
+          <p
+            class="hero-guest"
+            data-ja="Special Guest&#10;Charles Berry（Chuck Berry III）"
+            data-en="Special Guest&#10;Charles Berry (Chuck Berry III)"
+          >Special Guest
+Charles Berry（Chuck Berry III）</p>
+
+          <p
+            class="hero-dates"
+            data-ja="2026年5月15日（金） 青山 Red Shoes&#10;2026年5月16日（土） 下北沢 CLUB Que"
+            data-en="May 15, 2026 (Fri) — Aoyama Red Shoes&#10;May 16, 2026 (Sat) — Shimokitazawa CLUB Que"
+          >2026年5月15日（金） 青山 Red Shoes
+2026年5月16日（土） 下北沢 CLUB Que</p>
 
           <div class="hero-pills">
             <span class="pill">May 15, 2026</span>
             <span class="pill">May 16, 2026</span>
             <span
               class="pill"
-              data-ja="東京2公演シリーズ"
+              data-ja="東京2公演"
               data-en="Tokyo 2 Shows"
-            >東京2公演シリーズ</span>
-            <span class="pill">Special Guest: Charles Berry</span>
+            >東京2公演</span>
+            <span
+              class="pill"
+              data-ja="特別ゲスト出演"
+              data-en="Special Guest Appearance"
+            >特別ゲスト出演</span>
           </div>
 
           <div class="hero-actions">
@@ -560,14 +609,15 @@
 
             <p
               class="hero-side-title"
-              data-ja="ひとつの祝祭、ふたつの夜。"
-              data-en="One celebration, two different nights."
-            >ひとつの祝祭、ふたつの夜。</p>
+              data-ja="2日間開催の記念ライブ"
+              data-en="A Two-Night Commemorative Live Series"
+            >2日間開催の記念ライブ</p>
 
             <p
-              data-ja="より近い距離感の特別公演と、一夜限りの共演による拡張編。2つの夜を通じて、Chuck Berryのレガシーを東京で鳴らします。"
-              data-en="An intimate special performance and an expanded one-night collaboration. Across two nights, Chuck Berry’s legacy comes alive in Tokyo."
-            >より近い距離感の特別公演と、一夜限りの共演による拡張編。2つの夜を通じて、Chuck Berryのレガシーを東京で鳴らします。</p>
+              data-ja="5月15日は青山 Red Shoes、5月16日は下北沢 CLUB Queで開催します。&#10;日程ごとに会場、出演者、チケット内容が異なります。"
+              data-en="The first show takes place at Aoyama Red Shoes on May 15, and the second at Shimokitazawa CLUB Que on May 16. Venue, lineup, and ticket details differ for each date."
+            >5月15日は青山 Red Shoes、5月16日は下北沢 CLUB Queで開催します。
+日程ごとに会場、出演者、チケット内容が異なります。</p>
           </div>
         </div>
       </div>
@@ -583,10 +633,10 @@
 
         <p
           class="section-lead"
-          data-ja="2つの夜、それぞれ異なる会場と編成で、Chuck Berryのレガシーを東京に鳴らします。"
-          data-en="Across two nights, different venues and lineups bring Chuck Berry’s legacy to life in Tokyo."
+          data-ja="2公演の詳細です。日程ごとに会場・出演者・チケット情報をご確認ください。"
+          data-en="Here are the details for both performances. Please check the venue, lineup, and ticket information for each date."
         >
-          2つの夜、それぞれ異なる会場と編成で、Chuck Berryのレガシーを東京に鳴らします。
+          2公演の詳細です。日程ごとに会場・出演者・チケット情報をご確認ください。
         </p>
 
         <div class="shows-grid">
@@ -599,7 +649,11 @@
                   data-en="Performance 01"
                 >Performance 01</span>
 
-                <h3 class="show-date">2026.05.15 Fri</h3>
+                <h3
+                  class="show-date"
+                  data-ja="2026年5月15日（金）"
+                  data-en="May 15, 2026 (Fri)"
+                >2026年5月15日（金）</h3>
                 <p class="show-venue">Aoyama Red Shoes</p>
               </div>
             </div>
@@ -643,10 +697,11 @@
                 >出演</span>
                 <div
                   class="meta-text"
-                  data-ja="スペシャルゲスト：Charles Berry (Chuck Berry III) / 出演バンド：THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
-                  data-en="Special Guest: Charles Berry (Chuck Berry III) / Performing Band: THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
+                  data-ja="スペシャルゲスト：Charles Berry（Chuck Berry III）&#10;出演バンド：THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA） with Shono Mercy"
+                  data-en="Special Guest: Charles Berry (Chuck Berry III)&#10;Performing Band: THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
                 >
-                  スペシャルゲスト：Charles Berry (Chuck Berry III) / 出演バンド：THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy
+                  スペシャルゲスト：Charles Berry（Chuck Berry III）
+                  出演バンド：THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA） with Shono Mercy
                 </div>
               </div>
 
@@ -677,18 +732,21 @@
 
             <p
               class="show-note"
-              data-ja="5月15日は、より近い距離感でこのシリーズのはじまりを体感できる特別公演です。演奏と空間の近さ、その場でしか生まれない空気を味わえる一夜になります。"
-              data-en="The May 15 show is a special performance that lets the audience experience the beginning of the series at closer range. It is a night defined by intimacy, live energy, and the atmosphere that only emerges in the room."
+              data-ja="5月15日は青山 Red Shoesで開催する公演です。&#10;出演者との距離が近い会場で、ライブを間近で楽しめます。&#10;座席数の少ない会場のため、チケット数には限りがあります。"
+              data-en="The May 15 performance takes place at Aoyama Red Shoes. It is an intimate venue where you can enjoy the live show up close. Ticket quantity is limited due to the smaller capacity."
             >
-              5月15日は、より近い距離感でこのシリーズのはじまりを体感できる特別公演です。演奏と空間の近さ、その場でしか生まれない空気を味わえる一夜になります。
+              5月15日は青山 Red Shoesで開催する公演です。
+              出演者との距離が近い会場で、ライブを間近で楽しめます。
+              座席数の少ない会場のため、チケット数には限りがあります。
             </p>
 
             <p
               class="show-note"
-              data-ja="予約・支払い完了後、整理番号付き確認メールをお送りします。整理番号は予約完了順に発行されます。"
+              data-ja="予約と支払い完了後、整理番号付きの確認メールをお送りします。&#10;整理番号は予約完了順です。"
               data-en="After reservation and payment are completed, a confirmation email with your entry number will be sent. Entry numbers are issued in order of reservation completion."
             >
-              予約・支払い完了後、整理番号付き確認メールをお送りします。整理番号は予約完了順に発行されます。
+              予約と支払い完了後、整理番号付きの確認メールをお送りします。
+              整理番号は予約完了順です。
             </p>
 
             <div class="show-actions">
@@ -712,7 +770,11 @@
                   data-en="Performance 02"
                 >Performance 02</span>
 
-                <h3 class="show-date">2026.05.16 Sat</h3>
+                <h3
+                  class="show-date"
+                  data-ja="2026年5月16日（土）"
+                  data-en="May 16, 2026 (Sat)"
+                >2026年5月16日（土）</h3>
                 <p class="show-venue">Shimokitazawa CLUB Que</p>
               </div>
             </div>
@@ -756,10 +818,13 @@
                 >出演</span>
                 <div
                   class="meta-text"
-                  data-ja="Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / 暴動クラブ"
-                  data-en="Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / The Voodoo Club"
+                  data-ja="Charles Berry（Chuck Berry III） from USA&#10;THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA）&#10;Shono Mercy&#10;暴動クラブ"
+                  data-en="Charles Berry (Chuck Berry III) from USA&#10;THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA)&#10;Shono Mercy&#10;The Voodoo Club"
                 >
-                  Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / 暴動クラブ
+                  Charles Berry（Chuck Berry III） from USA
+                  THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA）
+                  Shono Mercy
+                  暴動クラブ
                 </div>
               </div>
 
@@ -781,10 +846,12 @@
 
             <p
               class="show-note"
-              data-ja="5月16日は、日本のロックンロールバンド「暴動クラブ」との一夜限りの共演公演です。共演色の強いライブハウス公演として、シリーズにもうひとつの表情を加える拡張編となります。"
-              data-en="The May 16 show is a one-night-only collaboration with the Japanese rock ’n’ roll band The Voodoo Club. As a live-house performance with a stronger collaborative focus, it serves as an expanded chapter of the series."
+              data-ja="5月16日は下北沢 CLUB Queで開催する公演です。&#10;暴動クラブを迎えた一夜限りの共演ライブです。&#10;ライブハウス形式の公演で、よりロックンロール色の強いステージになります。"
+              data-en="The May 16 performance takes place at Shimokitazawa CLUB Que. It is a one-night-only collaborative live show featuring The Voodoo Club. The live-house setting gives this stage a stronger rock ’n’ roll atmosphere."
             >
-              5月16日は、日本のロックンロールバンド「暴動クラブ」との一夜限りの共演公演です。共演色の強いライブハウス公演として、シリーズにもうひとつの表情を加える拡張編となります。
+              5月16日は下北沢 CLUB Queで開催する公演です。
+              暴動クラブを迎えた一夜限りの共演ライブです。
+              ライブハウス形式の公演で、よりロックンロール色の強いステージになります。
             </p>
 
             <div class="show-actions">
@@ -802,9 +869,9 @@
                 href="https://eplus.jp/sf/detail/4493890001-P0030001"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-ja="5/16 Streaming+"
-                data-en="Streaming+ for 5/16"
-              >5/16 Streaming+</a>
+                data-ja="5/16 配信"
+                data-en="Streaming for 5/16"
+              >5/16 配信</a>
             </div>
           </article>
         </div>
@@ -822,10 +889,11 @@
 
           <p
             class="section-lead"
-            data-ja="Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。"
-            data-en="To commemorate the 100th anniversary of Chuck Berry’s birth, we are presenting a two-show series in Tokyo. Rooted in respect for the origin of rock ’n’ roll, each night offers a different venue, lineup, and atmosphere to experience this legacy in two distinct ways."
+            data-ja="Chuck Berry生誕100周年を記念して開催する東京2公演です。&#10;2日間それぞれ異なる内容で、Chuck Berryの音楽をたどるライブイベントです。"
+            data-en="This is a two-show Tokyo series held to celebrate the 100th anniversary of Chuck Berry. Each night offers a different program and follows the musical legacy of Chuck Berry."
           >
-            Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。
+            Chuck Berry生誕100周年を記念して開催する東京2公演です。
+            2日間それぞれ異なる内容で、Chuck Berryの音楽をたどるライブイベントです。
           </p>
         </div>
       </div>
@@ -841,10 +909,10 @@
 
         <p
           class="section-lead"
-          data-ja="Chuck Berry生誕100周年を彩る出演者たち。2つの夜それぞれの編成と共演が、このシリーズに異なる表情を与えます。"
-          data-en="The artists shaping this Chuck Berry centennial series. Across both nights, each lineup brings its own character to the celebration."
+          data-ja="各公演の出演者です。日程によって出演内容が異なります。"
+          data-en="Here are the artists for each performance. The lineup differs depending on the date."
         >
-          Chuck Berry生誕100周年を彩る出演者たち。2つの夜それぞれの編成と共演が、このシリーズに異なる表情を与えます。
+          各公演の出演者です。日程によって出演内容が異なります。
         </p>
 
         <div class="artists-grid">
@@ -859,10 +927,11 @@
 
             <p
               class="artist-text"
-              data-ja="シリーズの象徴となるスペシャルゲスト。各公演の文脈の中で、Chuck Berryのレガシーを現在に接続する存在です。"
-              data-en="The symbolic special guest of the series, connecting Chuck Berry’s legacy to the present through each performance."
+              data-ja="Chuck Berry IIIとして出演するスペシャルゲストです。&#10;本シリーズの中心となるゲストとして参加します。"
+              data-en="A special guest appearing as Chuck Berry III. He joins the series as its central guest."
             >
-              シリーズの象徴となるスペシャルゲスト。各公演の文脈の中で、Chuck Berryのレガシーを現在に接続する存在です。
+              Chuck Berry IIIとして出演するスペシャルゲストです。
+              本シリーズの中心となるゲストとして参加します。
             </p>
           </article>
 
@@ -885,10 +954,10 @@
 
             <p
               class="artist-text"
-              data-ja="ブルースとロックンロールの熱量を現場で押し上げるバンドに、EZRA LEEを迎えた特別編成。"
-              data-en="A special lineup led by THE BROKEN BLUES BAND, joined by EZRA LEE, bringing blues and rock ’n’ roll energy to the stage."
+              data-ja="THE BROKEN BLUES BANDに、EZRA LEEを迎えた特別編成です。"
+              data-en="A special lineup featuring THE BROKEN BLUES BAND joined by EZRA LEE."
             >
-              ブルースとロックンロールの熱量を現場で押し上げるバンドに、EZRA LEEを迎えた特別編成。
+              THE BROKEN BLUES BANDに、EZRA LEEを迎えた特別編成です。
             </p>
           </article>
 
@@ -903,10 +972,11 @@
 
             <p
               class="artist-text"
-              data-ja="本シリーズの主催兼出演。企画の軸となる存在として2公演を束ねます。"
-              data-en="Organizer and performer of the series, serving as the central force connecting both nights."
+              data-ja="本シリーズの主催・出演です。&#10;2公演を通して出演します。"
+              data-en="Organizer and performer of this series. Appears across both performances."
             >
-              本シリーズの主催兼出演。企画の軸となる存在として2公演を束ねます。
+              本シリーズの主催・出演です。
+              2公演を通して出演します。
             </p>
           </article>
 
@@ -925,10 +995,10 @@
 
             <p
               class="artist-text"
-              data-ja="5/16 CLUB Que公演に出演する日本のロックンロールバンド。シリーズの拡張編を担う一夜限りの共演相手です。"
-              data-en="A Japanese rock ’n’ roll band appearing on the May 16 CLUB Que show, joining the series for its expanded one-night collaboration."
+              data-ja="5月16日 CLUB Que公演に出演する日本のロックンロールバンドです。"
+              data-en="A Japanese rock ’n’ roll band appearing on the May 16 CLUB Que performance."
             >
-              5/16 CLUB Que公演に出演する日本のロックンロールバンド。シリーズの拡張編を担う一夜限りの共演相手です。
+              5月16日 CLUB Que公演に出演する日本のロックンロールバンドです。
             </p>
           </article>
         </div>
@@ -974,10 +1044,10 @@
                 >イベント概要</span>
                 <div
                   class="common-value"
-                  data-ja="Chuck Berry生誕100周年を記念した東京2公演シリーズ"
+                  data-ja="Chuck Berry生誕100周年記念 東京2公演"
                   data-en="A two-show Tokyo series celebrating the 100th anniversary of Chuck Berry"
                 >
-                  Chuck Berry生誕100周年を記念した東京2公演シリーズ
+                  Chuck Berry生誕100周年記念 東京2公演
                 </div>
               </div>
 
@@ -989,10 +1059,10 @@
                 >チケット案内</span>
                 <div
                   class="common-value"
-                  data-ja="各公演の詳細・チケット購入は、それぞれのボタンからご確認ください。"
+                  data-ja="各公演の詳細とチケット情報は、各ボタンからご確認ください。"
                   data-en="Please use the button for each performance to view details and ticket information."
                 >
-                  各公演の詳細・チケット購入は、それぞれのボタンからご確認ください。
+                  各公演の詳細とチケット情報は、各ボタンからご確認ください。
                 </div>
               </div>
             </div>
@@ -1011,10 +1081,11 @@
           >チケット・配信情報</h2>
 
           <p
-            data-ja="5/15と5/16では、会場も空気感も導線も異なります。ご希望の公演に合わせて、各ボタンから詳細をご確認ください。"
-            data-en="The venue, atmosphere, and access path differ between May 15 and May 16. Please use the button that matches the performance you want to attend."
+            data-ja="チケットは各公演ごとに販売しています。&#10;ご希望の公演のボタンからご予約ください。"
+            data-en="Tickets are sold separately for each performance. Please use the button for the show you would like to attend."
           >
-            5/15と5/16では、会場も空気感も導線も異なります。ご希望の公演に合わせて、各ボタンから詳細をご確認ください。
+            チケットは各公演ごとに販売しています。
+            ご希望の公演のボタンからご予約ください。
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1041,9 +1112,9 @@
               href="https://eplus.jp/sf/detail/4493890001-P0030001"
               target="_blank"
               rel="noopener noreferrer"
-              data-ja="5/16 Streaming+"
-              data-en="Streaming+ for 5/16"
-            >5/16 Streaming+</a>
+              data-ja="5/16 配信"
+              data-en="Streaming for 5/16"
+            >5/16 配信</a>
           </div>
         </div>
       </div>
