@@ -4,14 +4,547 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chuck Berry Centennial Live Tokyo 2026</title>
+  <meta name="description" content="Chuck Berry Centennial Live Tokyo 2026. Special Guest Charles Berry III. Ticket information and event details." />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --bg-soft: #151515;
+      --text: #f5f1e8;
+      --muted: #c4bfb5;
+      --line: rgba(255,255,255,0.12);
+      --accent: #d8a23a;
+      --accent-2: #a61919;
+      --max: 1080px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(166, 25, 25, 0.18), transparent 35%),
+        linear-gradient(180deg, #090909 0%, #111111 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(11, 11, 11, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f1c15f);
+      color: #111;
+      box-shadow: 0 10px 30px rgba(216, 162, 58, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero {
+      padding: 72px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .panel,
+    .artist-card,
+    .cta-box {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+    }
+
+    .hero-copy {
+      padding: 32px;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        radial-gradient(circle at 20% 0%, rgba(216,162,58,0.16), transparent 40%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 0.84rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 58ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .meta-pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-card {
+      overflow: hidden;
+      min-height: 460px;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.58)),
+        url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.72) 100%);
+    }
+
+    .hero-card-content {
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      z-index: 1;
+    }
+
+    .hero-card-content p {
+      margin: 8px 0 0;
+      color: #f0e7d8;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .artists-grid,
+    .info-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .artists-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .artist-card {
+      padding: 22px;
+    }
+
+    .artist-role {
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .artist-name {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .artist-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .cta-box {
+      padding: 28px;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(216,162,58,0.08), rgba(255,255,255,0.03));
+    }
+
+    .cta-box p {
+      margin: 0 auto 18px;
+      color: var(--muted);
+      max-width: 54ch;
+    }
+
+    .footer {
+      padding: 34px 0 60px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .small-link {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .artists-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-card {
+        min-height: auto;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Chuck Berry Centennial Live Tokyo 2026</h1>
-  <p>2026年5月15日（金） / 青山レッドシューズ</p>
-  <p>
-    <a href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026">
-      チケット購入
-    </a>
-  </p>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand">Shono Mercy Records</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#artists">Artists</a>
+        <a href="#info">Info</a>
+        <a href="#tickets" class="btn btn-primary">Tickets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Live in Tokyo 2026</span>
+          <h1>Chuck Berry Centennial Live</h1>
+          <p class="hero-sub">
+            ロックンロールの原点を祝う一夜。スペシャルゲストを迎え、
+            東京でしか実現しない熱量と空気感をライブハウスで体感してください。
+          </p>
+
+          <div class="hero-meta">
+            <span class="meta-pill">2026.05.15 Fri</span>
+            <span class="meta-pill">Aoyama Red Shoes</span>
+            <span class="meta-pill">Special Guest: Charles Berry III</span>
+          </div>
+
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              チケット購入
+            </a>
+            <a class="btn btn-secondary" href="#about">イベント詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Live event visual">
+          <div class="hero-card-content">
+            <span class="eyebrow" style="margin-bottom: 8px;">One Night Only</span>
+            <p>Special Guest / Live Performance / Ticket Reservation Open</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="panel">
+          <h2 class="section-title">About the Event</h2>
+          <p class="section-lead">
+            Chuck Berryの生誕100周年を記念し、ロックンロールのルーツと現在をつなぐライブイベントとして開催。
+            スペシャルゲスト、バンド、主催の熱量が交差する、現場で浴びるべき一夜です。
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            今すぐ予約する
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="artists">
+      <div class="container">
+        <h2 class="section-title">Featured Guests & Artists</h2>
+        <p class="section-lead">
+          出演者紹介は長すぎない方が強いです。ここでは「何者か」が一瞬で伝わる密度にしています。
+        </p>
+
+        <div class="artists-grid">
+          <article class="artist-card">
+            <div class="artist-role">Special Guest</div>
+            <h3 class="artist-name">Charles Berry III</h3>
+            <p class="artist-text">
+              Chuck Berryファミリーの系譜を受け継ぐスペシャルゲスト。
+              このイベントの象徴となる存在。
+            </p>
+          </article>
+
+          <article class="artist-card">
+            <div class="artist-role">Performing Band</div>
+            <h3 class="artist-name">The Broken Blues Band</h3>
+            <p class="artist-text">
+              ブルースとロックンロールの熱量をライブで鳴らすバンド。
+              現場の温度を押し上げる中核。
+            </p>
+          </article>
+
+          <article class="artist-card">
+            <div class="artist-role">Host / Artist</div>
+            <h3 class="artist-name">Shono Mercy</h3>
+            <p class="artist-text">
+              本イベントの主催兼出演者。
+              日本でこの夜を実現する中心として企画をリード。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="info">
+      <div class="container">
+        <div class="panel">
+          <h2 class="section-title">Event Info</h2>
+          <div class="info-grid">
+            <div>
+              <div class="info-item">
+                <span class="info-label">Date</span>
+                <div class="info-value">Friday, May 15, 2026</div>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Open / Start</span>
+                <div class="info-value">Open 18:00 / Start 19:00</div>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Venue</span>
+                <div class="info-value">Aoyama Red Shoes, Tokyo</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="info-item">
+                <span class="info-label">Ticket</span>
+                <div class="info-value">詳細・予約はチケットページをご確認ください。</div>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Reservation</span>
+                <div class="info-value">
+                  <a
+                    class="small-link"
+                    href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ticket Page
+                  </a>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Contact</span>
+                <div class="info-value">shono.mercy.music@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tickets">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="section-title">Reserve Your Tickets</h2>
+          <p>
+            チケット販売は専用ページで受け付けています。
+            席数や入場順の条件は、販売ページにてご確認ください。
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            チケットページへ進む
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>Presented by Shono Mercy Records</div>
+      <div>Contact: shono.mercy.music@gmail.com</div>
+    </div>
+  </footer>
 </body>
 </html>
