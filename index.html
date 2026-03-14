@@ -65,6 +65,13 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       font-size:.95rem;
+      white-space:nowrap;
+    }
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
     }
 
     .nav-links{
@@ -76,6 +83,35 @@
     }
 
     .nav-links a:hover{color:var(--text)}
+
+    .lang-switch{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .lang-btn{
+      min-width:52px;
+      height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.04);
+      color:var(--text);
+      cursor:pointer;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .lang-btn:hover{
+      background:rgba(255,255,255,0.08);
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(135deg,var(--gold),#f1c768);
+      color:#111;
+      border-color:transparent;
+    }
 
     .btn{
       display:inline-flex;
@@ -412,10 +448,22 @@
       }
     }
 
+    @media (max-width: 820px){
+      .nav-links{display:none}
+      .header-right{margin-left:auto}
+    }
+
     @media (max-width: 720px){
       .hero{padding-top:38px}
-      .nav-links{display:none}
       .hero-main,.section-panel,.show-card,.artist-card,.cta-panel{padding:22px}
+      .nav{
+        align-items:flex-start;
+      }
+      .header-right{
+        flex-direction:column;
+        align-items:flex-end;
+        gap:10px;
+      }
     }
   </style>
 </head>
@@ -423,12 +471,20 @@
   <header class="site-header">
     <div class="container nav">
       <a href="#" class="brand">Shono Mercy Records</a>
-      <nav class="nav-links">
-        <a href="#shows">Performances</a>
-        <a href="#about">About</a>
-        <a href="#artists">Artists</a>
-        <a href="#info">Info</a>
-      </nav>
+
+      <div class="header-right">
+        <nav class="nav-links">
+          <a href="#shows" data-ja="公演一覧" data-en="Performances">公演一覧</a>
+          <a href="#about" data-ja="シリーズ概要" data-en="About">シリーズ概要</a>
+          <a href="#artists" data-ja="出演者" data-en="Artists">出演者</a>
+          <a href="#info" data-ja="共通情報" data-en="Info">共通情報</a>
+        </nav>
+
+        <div class="lang-switch">
+          <button type="button" class="lang-btn active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -436,32 +492,71 @@
     <section class="hero">
       <div class="container hero-wrap">
         <div class="hero-main">
-          <span class="eyebrow">Chuck Berry Centennial / Tokyo 2026</span>
-          <h1>2 Performances. 1 Legacy.</h1>
-          <p class="hero-sub">
-            チャック・ベリー生誕100周年を記念した東京シリーズ。
-            5月15日と5月16日、それぞれ異なる会場・編成・空気感で開催される2公演を、
-            ひとつのページで確認できるシリーズLPです。
+          <span
+            class="eyebrow"
+            data-ja="Chuck Berry生誕100周年 / Tokyo 2026"
+            data-en="Chuck Berry Centennial / Tokyo 2026"
+          >Chuck Berry生誕100周年 / Tokyo 2026</span>
+
+          <h1
+            data-ja="2公演。1つのレガシー。"
+            data-en="2 Performances. 1 Legacy."
+          >2公演。1つのレガシー。</h1>
+
+          <p
+            class="hero-sub"
+            data-ja="チャック・ベリー生誕100周年を記念した東京シリーズ。5月15日と5月16日、それぞれ異なる会場・編成・空気感で開催される2公演を、ひとつのページで確認できるシリーズLPです。"
+            data-en="A Tokyo live series celebrating the 100th anniversary of Chuck Berry. This landing page brings together two performances on May 15 and May 16, each with its own venue, lineup, and atmosphere."
+          >
+            チャック・ベリー生誕100周年を記念した東京シリーズ。5月15日と5月16日、それぞれ異なる会場・編成・空気感で開催される2公演を、ひとつのページで確認できるシリーズLPです。
           </p>
 
           <div class="hero-pills">
             <span class="pill">May 15, 2026</span>
             <span class="pill">May 16, 2026</span>
-            <span class="pill">Tokyo 2 Shows</span>
+            <span
+              class="pill"
+              data-ja="Tokyo 2公演"
+              data-en="Tokyo 2 Shows"
+            >Tokyo 2公演</span>
             <span class="pill">Special Guest: Charles Berry</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#shows">2公演を見る</a>
-            <a class="btn btn-secondary" href="#about">シリーズ概要</a>
+            <a
+              class="btn btn-primary"
+              href="#shows"
+              data-ja="2公演を見る"
+              data-en="View Performances"
+            >2公演を見る</a>
+
+            <a
+              class="btn btn-secondary"
+              href="#about"
+              data-ja="シリーズ概要"
+              data-en="About the Series"
+            >シリーズ概要</a>
           </div>
         </div>
 
         <div class="hero-side">
           <div class="hero-side-inner">
-            <span class="eyebrow">Series Landing Page</span>
-            <p class="hero-side-title">One celebration, two different nights.</p>
-            <p>公演ごとの日程・会場・出演者・チケット導線を分離して整理。</p>
+            <span
+              class="eyebrow"
+              data-ja="シリーズLP"
+              data-en="Series Landing Page"
+            >シリーズLP</span>
+
+            <p
+              class="hero-side-title"
+              data-ja="ひとつの祝祭、ふたつの夜。"
+              data-en="One celebration, two different nights."
+            >ひとつの祝祭、ふたつの夜。</p>
+
+            <p
+              data-ja="公演ごとの日程・会場・出演者・チケット導線を分離して整理。"
+              data-en="Designed to separate each show’s date, venue, lineup, and ticket path clearly."
+            >公演ごとの日程・会場・出演者・チケット導線を分離して整理。</p>
           </div>
         </div>
       </div>
@@ -469,8 +564,17 @@
 
     <section id="shows">
       <div class="container">
-        <h2 class="section-title">Performances</h2>
-        <p class="section-lead">
+        <h2
+          class="section-title"
+          data-ja="Performances"
+          data-en="Performances"
+        >Performances</h2>
+
+        <p
+          class="section-lead"
+          data-ja="2公演を同列で比較できる構成にしています。日付・会場・時間・出演差分・導線を混ぜないことが、このLPの設計上の最重要ポイントです。"
+          data-en="This page is structured so both shows can be compared side by side. The key design principle is to keep the dates, venues, times, lineup differences, and ticket paths clearly separated."
+        >
           2公演を同列で比較できる構成にしています。日付・会場・時間・出演差分・導線を混ぜないことが、このLPの設計上の最重要ポイントです。
         </p>
 
@@ -478,7 +582,12 @@
           <article class="show-card">
             <div class="show-top">
               <div>
-                <span class="show-label">Performance 01</span>
+                <span
+                  class="show-label"
+                  data-ja="Performance 01"
+                  data-en="Performance 01"
+                >Performance 01</span>
+
                 <h3 class="show-date">2026.05.15 Fri</h3>
                 <p class="show-venue">Aoyama Red Shoes</p>
               </div>
@@ -486,27 +595,53 @@
 
             <div class="show-meta">
               <div class="meta-block">
-                <span class="meta-title">Title</span>
+                <span
+                  class="meta-title"
+                  data-ja="タイトル"
+                  data-en="Title"
+                >タイトル</span>
                 <div class="meta-text">Chuck Berry Centennial Live - Rock ’n’ Roll Legacy Tokyo 2026 -</div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Time</span>
+                <span
+                  class="meta-title"
+                  data-ja="時間"
+                  data-en="Time"
+                >時間</span>
                 <div class="meta-text">Open 18:00 / Start 19:00 / End 23:00</div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Lineup</span>
+                <span
+                  class="meta-title"
+                  data-ja="出演"
+                  data-en="Lineup"
+                >出演</span>
                 <div class="meta-text">Charles Berry (Chuck Berry III) / The Broken Blues Band with Shono Mercy</div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Ticket</span>
-                <div class="meta-text">予約・詳細は販売ページをご確認ください。</div>
+                <span
+                  class="meta-title"
+                  data-ja="チケット"
+                  data-en="Ticket"
+                >チケット</span>
+                <div
+                  class="meta-text"
+                  data-ja="予約・詳細は販売ページをご確認ください。"
+                  data-en="Please check the ticket page for reservations and details."
+                >
+                  予約・詳細は販売ページをご確認ください。
+                </div>
               </div>
             </div>
 
-            <p class="show-note">
+            <p
+              class="show-note"
+              data-ja="5/15公演の文言・価格・出演表記は、最終確定版に合わせて差し替えてください。"
+              data-en="Please update the copy, pricing, and lineup details for the May 15 show once the final information is confirmed."
+            >
               5/15公演の文言・価格・出演表記は、最終確定版に合わせて差し替えてください。
             </p>
 
@@ -516,16 +651,21 @@
                 href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                5/15 チケット
-              </a>
+                data-ja="5/15 チケット"
+                data-en="Tickets for 5/15"
+              >5/15 チケット</a>
             </div>
           </article>
 
           <article class="show-card show-red">
             <div class="show-top">
               <div>
-                <span class="show-label">Performance 02</span>
+                <span
+                  class="show-label"
+                  data-ja="Performance 02"
+                  data-en="Performance 02"
+                >Performance 02</span>
+
                 <h3 class="show-date">2026.05.16 Sat</h3>
                 <p class="show-venue">Shimokitazawa CLUB Que</p>
               </div>
@@ -533,28 +673,60 @@
 
             <div class="show-meta">
               <div class="meta-block">
-                <span class="meta-title">Title</span>
-                <div class="meta-text">チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ</div>
+                <span
+                  class="meta-title"
+                  data-ja="タイトル"
+                  data-en="Title"
+                >タイトル</span>
+                <div
+                  class="meta-text"
+                  data-ja="チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ"
+                  data-en="Chuck Berry 100th Anniversary Rock ’n’ Roll Legacy Tokyo 2026 with Bodo Club"
+                >
+                  チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ
+                </div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Time</span>
+                <span
+                  class="meta-title"
+                  data-ja="時間"
+                  data-en="Time"
+                >時間</span>
                 <div class="meta-text">Open 18:15 / Start 19:00</div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Lineup</span>
-                <div class="meta-text">Charles Berry(Chuck Berry Ⅲ) from USA / The Broken Blues Band / Shono Mercy / 暴動クラブ</div>
+                <span
+                  class="meta-title"
+                  data-ja="出演"
+                  data-en="Lineup"
+                >出演</span>
+                <div class="meta-text">Charles Berry (Chuck Berry III) from USA / The Broken Blues Band / Shono Mercy / 暴動クラブ</div>
               </div>
 
               <div class="meta-block">
-                <span class="meta-title">Ticket</span>
-                <div class="meta-text">ADV. ¥5,500 / DOOR. ¥6,100 [+1D] / Streaming ¥3,300</div>
+                <span
+                  class="meta-title"
+                  data-ja="チケット"
+                  data-en="Ticket"
+                >チケット</span>
+                <div
+                  class="meta-text"
+                  data-ja="前売 ¥5,500 / 当日 ¥6,100 [+1D] / 配信 ¥3,300"
+                  data-en="Advance ¥5,500 / Door ¥6,100 [+1D] / Streaming ¥3,300"
+                >
+                  前売 ¥5,500 / 当日 ¥6,100 [+1D] / 配信 ¥3,300
+                </div>
               </div>
             </div>
 
-            <p class="show-note">
-              下北沢CLUB Que公式掲載情報ベース。配信あり。 :contentReference[oaicite:1]{index=1}
+            <p
+              class="show-note"
+              data-ja="下北沢CLUB Que公式掲載情報ベース。配信あり。"
+              data-en="Based on the official Shimokitazawa CLUB Que listing. Streaming available."
+            >
+              下北沢CLUB Que公式掲載情報ベース。配信あり。
             </p>
 
             <div class="show-actions">
@@ -563,9 +735,9 @@
                 href="https://clubque.net/schedule/14348/"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                5/16 詳細を見る
-              </a>
+                data-ja="5/16 詳細を見る"
+                data-en="Details for 5/16"
+              >5/16 詳細を見る</a>
             </div>
           </article>
         </div>
@@ -575,11 +747,18 @@
     <section id="about">
       <div class="container">
         <div class="section-panel">
-          <h2 class="section-title">About the Series</h2>
-          <p class="section-lead">
-            このLPは、1公演単位ではなく「Chuck Berry 100周年 東京シリーズ」として設計しています。
-            上ではシリーズ全体の熱量を見せ、各公演ブロックでは日程・会場・チケット導線を分離。
-            これにより、情報の衝突を防ぎながら、2公演の価値をひとつのストーリーとして見せます。
+          <h2
+            class="section-title"
+            data-ja="About the Series"
+            data-en="About the Series"
+          >About the Series</h2>
+
+          <p
+            class="section-lead"
+            data-ja="このLPは、1公演単位ではなく「Chuck Berry 100周年 東京シリーズ」として設計しています。上ではシリーズ全体の熱量を見せ、各公演ブロックでは日程・会場・チケット導線を分離。これにより、情報の衝突を防ぎながら、2公演の価値をひとつのストーリーとして見せます。"
+            data-en="This landing page is designed not as a single-show page, but as a unified Chuck Berry Centennial Tokyo series page. The top section presents the overall concept, while each performance block separates the date, venue, and ticket path to avoid conflicts and present both nights as part of one larger story."
+          >
+            このLPは、1公演単位ではなく「Chuck Berry 100周年 東京シリーズ」として設計しています。上ではシリーズ全体の熱量を見せ、各公演ブロックでは日程・会場・チケット導線を分離。これにより、情報の衝突を防ぎながら、2公演の価値をひとつのストーリーとして見せます。
           </p>
         </div>
       </div>
@@ -587,41 +766,90 @@
 
     <section id="artists">
       <div class="container">
-        <h2 class="section-title">Featured Guests & Artists</h2>
-        <p class="section-lead">
+        <h2
+          class="section-title"
+          data-ja="Featured Guests & Artists"
+          data-en="Featured Guests & Artists"
+        >Featured Guests & Artists</h2>
+
+        <p
+          class="section-lead"
+          data-ja="共通の出演者情報はここに集約。各公演での出演有無や編成差分は、上の公演ブロック側で管理する前提です。"
+          data-en="Shared artist information is collected here. Differences in each show’s lineup are handled in the performance blocks above."
+        >
           共通の出演者情報はここに集約。各公演での出演有無や編成差分は、上の公演ブロック側で管理する前提です。
         </p>
 
         <div class="artists-grid">
           <article class="artist-card">
-            <div class="artist-role">Special Guest</div>
+            <div
+              class="artist-role"
+              data-ja="スペシャルゲスト"
+              data-en="Special Guest"
+            >スペシャルゲスト</div>
+
             <h3 class="artist-name">Charles Berry / Chuck Berry III</h3>
-            <p class="artist-text">
+
+            <p
+              class="artist-text"
+              data-ja="シリーズの象徴となるスペシャルゲスト。表記は公演ごとの正式名称に合わせて微調整してください。"
+              data-en="The symbolic special guest of the series. Adjust the exact name display to match each show’s official credit."
+            >
               シリーズの象徴となるスペシャルゲスト。表記は公演ごとの正式名称に合わせて微調整してください。
             </p>
           </article>
 
           <article class="artist-card">
-            <div class="artist-role">Band</div>
+            <div
+              class="artist-role"
+              data-ja="バンド"
+              data-en="Band"
+            >バンド</div>
+
             <h3 class="artist-name">The Broken Blues Band</h3>
-            <p class="artist-text">
+
+            <p
+              class="artist-text"
+              data-ja="ブルースとロックンロールの熱量を現場で押し上げるライブバンド。"
+              data-en="A live band that drives the energy of blues and rock ’n’ roll on stage."
+            >
               ブルースとロックンロールの熱量を現場で押し上げるライブバンド。
             </p>
           </article>
 
           <article class="artist-card">
-            <div class="artist-role">Host / Artist</div>
+            <div
+              class="artist-role"
+              data-ja="主催 / 出演"
+              data-en="Host / Artist"
+            >主催 / 出演</div>
+
             <h3 class="artist-name">Shono Mercy</h3>
-            <p class="artist-text">
+
+            <p
+              class="artist-text"
+              data-ja="本シリーズの主催兼出演。企画の軸となる存在として2公演を束ねます。"
+              data-en="Organizer and performer of the series, serving as the central force connecting both nights."
+            >
               本シリーズの主催兼出演。企画の軸となる存在として2公演を束ねます。
             </p>
           </article>
 
           <article class="artist-card">
-            <div class="artist-role">Guest Band</div>
-            <h3 class="artist-name">暴動クラブ</h3>
-            <p class="artist-text">
-              5/16 CLUB Que公演にラインナップされているゲストアクト。 :contentReference[oaicite:2]{index=2}
+            <div
+              class="artist-role"
+              data-ja="ゲストバンド"
+              data-en="Guest Band"
+            >ゲストバンド</div>
+
+            <h3 class="artist-name">暴動クラブ / Bodo Club</h3>
+
+            <p
+              class="artist-text"
+              data-ja="5/16 CLUB Que公演にラインナップされているゲストアクト。"
+              data-en="Guest act listed for the May 16 CLUB Que performance."
+            >
+              5/16 CLUB Que公演にラインナップされているゲストアクト。
             </p>
           </article>
         </div>
@@ -631,28 +859,62 @@
     <section id="info">
       <div class="container">
         <div class="section-panel">
-          <h2 class="section-title">Common Info</h2>
+          <h2
+            class="section-title"
+            data-ja="Common Info"
+            data-en="Common Info"
+          >Common Info</h2>
 
           <div class="common-grid">
             <div>
               <div class="common-item">
-                <span class="common-label">Presented by</span>
+                <span
+                  class="common-label"
+                  data-ja="主催"
+                  data-en="Presented by"
+                >主催</span>
                 <div class="common-value">Shono Mercy Records</div>
               </div>
+
               <div class="common-item">
-                <span class="common-label">Inquiry</span>
+                <span
+                  class="common-label"
+                  data-ja="問い合わせ"
+                  data-en="Inquiry"
+                >問い合わせ</span>
                 <div class="common-value">shono.mercy.music@gmail.com</div>
               </div>
             </div>
 
             <div>
               <div class="common-item">
-                <span class="common-label">Series Format</span>
-                <div class="common-value">Tokyo 2-show landing page</div>
+                <span
+                  class="common-label"
+                  data-ja="シリーズ形式"
+                  data-en="Series Format"
+                >シリーズ形式</span>
+                <div
+                  class="common-value"
+                  data-ja="東京2公演シリーズLP"
+                  data-en="Tokyo two-show landing page"
+                >
+                  東京2公演シリーズLP
+                </div>
               </div>
+
               <div class="common-item">
-                <span class="common-label">Ticket Guidance</span>
-                <div class="common-value">各公演ごとのボタンから詳細ページへ進んでください。</div>
+                <span
+                  class="common-label"
+                  data-ja="チケット案内"
+                  data-en="Ticket Guidance"
+                >チケット案内</span>
+                <div
+                  class="common-value"
+                  data-ja="各公演ごとのボタンから詳細ページへ進んでください。"
+                  data-en="Please use the button for each performance to access its ticket or detail page."
+                >
+                  各公演ごとのボタンから詳細ページへ進んでください。
+                </div>
               </div>
             </div>
           </div>
@@ -663,28 +925,37 @@
     <section>
       <div class="container">
         <div class="cta-panel">
-          <h2 class="section-title">Choose Your Night</h2>
-          <p>
-            5/15と5/16では、会場も空気感も導線も異なります。
-            迷わせないために、チケット導線は公演ごとに完全分離しています。
+          <h2
+            class="section-title"
+            data-ja="Choose Your Night"
+            data-en="Choose Your Night"
+          >Choose Your Night</h2>
+
+          <p
+            data-ja="5/15と5/16では、会場も空気感も導線も異なります。迷わせないために、チケット導線は公演ごとに完全分離しています。"
+            data-en="The venue, atmosphere, and ticket path differ between May 15 and May 16. To avoid confusion, each performance has its own clearly separated call to action."
+          >
+            5/15と5/16では、会場も空気感も導線も異なります。迷わせないために、チケット導線は公演ごとに完全分離しています。
           </p>
+
           <div class="hero-actions" style="justify-content:center;">
             <a
               class="btn btn-primary"
               href="https://ticket-system-2026.netlify.app/test-chuck100th-05152026"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              5/15 チケット
-            </a>
+              data-ja="5/15 チケット"
+              data-en="Tickets for 5/15"
+            >5/15 チケット</a>
+
             <a
               class="btn btn-secondary"
               href="https://clubque.net/schedule/14348/"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              5/16 詳細
-            </a>
+              data-ja="5/16 詳細"
+              data-en="Details for 5/16"
+            >5/16 詳細</a>
           </div>
         </div>
       </div>
@@ -698,5 +969,33 @@
       <div>Contact: shono.mercy.music@gmail.com</div>
     </div>
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) el.textContent = text;
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('siteLanguage', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('siteLanguage') || 'ja';
+      setLanguage(savedLang);
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setLanguage(btn.dataset.lang);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
