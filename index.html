@@ -372,6 +372,17 @@
       text-align: right;
     }
 
+    .venue a {
+      display: inline-block;
+      border-bottom: 1px solid rgba(255,255,255,0.28);
+      transition: opacity 0.18s ease, border-color 0.18s ease;
+    }
+
+    .venue a:hover {
+      opacity: 0.9;
+      border-color: rgba(255,255,255,0.62);
+    }
+
     .card-title {
       margin: 0 0 8px;
       font-size: 1.5rem;
@@ -491,6 +502,12 @@
     .artist-link:hover {
       transform: translateY(-1px);
       background: rgba(255, 255, 255, 0.08);
+    }
+
+    .artist-desc {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .info-grid {
@@ -736,10 +753,10 @@
             </div>
 
             <p class="hero-copy"
-              data-ja="Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。"
-              data-en="To commemorate the 100th anniversary of Chuck Berry’s birth, we are presenting a two-show series in Tokyo. Rooted in respect for the origin of rock ’n’ roll, each night offers a different venue, lineup, and atmosphere to experience this legacy in two distinct ways."
+              data-ja="チャック・ベリーの家族が認め、支えたこの企画。<br>その孫、Charlie Berryが来日。<br><br>生誕100周年を記念し、東京で2夜、<br>それぞれ異なる内容で開催される特別公演。"
+              data-en="Supported by Chuck Berry’s family, this special project brings his grandson Charlie Berry to Tokyo.<br><br>To mark the 100th anniversary of Chuck Berry’s birth, two special nights will be held in Tokyo, each with a different program."
             >
-              Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。
+              チャック・ベリーの家族が認め、支えたこの企画。<br>その孫、Charlie Berryが来日。<br><br>生誕100周年を記念し、東京で2夜、<br>それぞれ異なる内容で開催される特別公演。
             </p>
 
             <div class="hero-actions">
@@ -776,7 +793,11 @@
           <article class="card">
             <div class="card-top">
               <span class="date-badge">2026.05.15 Fri</span>
-              <div class="venue">Aoyama Red Shoes</div>
+              <div class="venue">
+                <a href="https://redshoes.jp/event/" target="_blank" rel="noopener noreferrer">
+                  Aoyama Red Shoes
+                </a>
+              </div>
             </div>
 
             <h3 class="card-title"
@@ -862,7 +883,11 @@
           <article class="card">
             <div class="card-top">
               <span class="date-badge">2026.05.16 Sat</span>
-              <div class="venue">Shimokitazawa CLUB Que</div>
+              <div class="venue">
+                <a href="https://clubque.net/schedule/14348/" target="_blank" rel="noopener noreferrer">
+                  Shimokitazawa CLUB Que
+                </a>
+              </div>
             </div>
 
             <h3 class="card-title"
@@ -984,6 +1009,13 @@
               <span data-ja="暴動クラブ" data-en="The Voodoo Club">暴動クラブ</span>
             </a>
           </div>
+
+          <p class="artist-desc"
+            data-ja="5月16日 CLUB Que公演に出演する日本のメジャーロックンロールバンド。"
+            data-en="A major Japanese rock ’n’ roll band appearing at the May 16 CLUB Que performance."
+          >
+            5月16日 CLUB Que公演に出演する日本のメジャーロックンロールバンド。
+          </p>
         </div>
       </div>
     </section>
@@ -1001,10 +1033,10 @@
               <div class="info-row">
                 <div class="info-key" data-ja="概要" data-en="Overview">概要</div>
                 <div class="info-val"
-                  data-ja="Chuck Berry生誕100周年を記念した東京2公演シリーズ"
-                  data-en="A two-show Tokyo series celebrating the 100th anniversary of Chuck Berry"
+                  data-ja="これはトリビュートじゃない。<br>“公認”ではなく、“本物”だ。<br><br>ロックンロールの原点、チャック・ベリー。<br>その生誕100周年を記念し、東京で2夜限りの特別公演を開催。<br><br>チャック・ベリー・ファミリーの直接サポートによって実現した本公演は、<br>2日間それぞれ異なる内容で、その音楽の軌跡を体感するライブイベント。<br><br>この規模・この形での開催は、今後まず起こらない。"
+                  data-en="This is not a tribute. This is the real thing.<br><br>To mark the 100th anniversary of Chuck Berry’s birth, two special nights will be held in Tokyo.<br><br>Made possible through direct support from the Chuck Berry family, this event offers two different programs across two nights, tracing the path of his music live.<br><br>An event of this scale and form is unlikely to happen again."
                 >
-                  Chuck Berry生誕100周年を記念した東京2公演シリーズ
+                  これはトリビュートじゃない。<br>“公認”ではなく、“本物”だ。<br><br>ロックンロールの原点、チャック・ベリー。<br>その生誕100周年を記念し、東京で2夜限りの特別公演を開催。<br><br>チャック・ベリー・ファミリーの直接サポートによって実現した本公演は、<br>2日間それぞれ異なる内容で、その音楽の軌跡を体感するライブイベント。<br><br>この規模・この形での開催は、今後まず起こらない。
                 </div>
               </div>
 
@@ -1116,7 +1148,7 @@
         translatable.forEach((el) => {
           const text = el.getAttribute("data-" + nextLang);
           if (text !== null) {
-            el.textContent = text;
+            el.innerHTML = text;
           }
         });
 
