@@ -6,684 +6,797 @@
   <title>Chuck Berry Centennial Tokyo Series 2026</title>
   <meta
     name="description"
-    content="Chuck Berry Centennial Tokyo Series 2026. Two live performances in Tokyo on May 15 and May 16 featuring special guests, venue information, and ticket links."
+    content="Chuck Berry生誕100周年を記念した東京2公演シリーズ。2026年5月15日 青山レッドシューズ、5月16日 下北沢CLUB Que。"
   />
   <style>
-    :root{
-      --bg:#090909;
-      --panel:#141414;
-      --panel-2:#1b1b1b;
-      --text:#f4efe7;
-      --muted:#c8c1b5;
-      --line:rgba(255,255,255,0.12);
-      --gold:#d6a33d;
-      --red:#a51f1f;
-      --max:1120px;
-      --radius:20px;
-      --shadow:0 14px 40px rgba(0,0,0,0.28);
+    :root {
+      --bg: #0b0b0d;
+      --bg-soft: #141418;
+      --panel: #18181d;
+      --panel-2: #202028;
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f5f3ee;
+      --muted: rgba(245, 243, 238, 0.72);
+      --accent: #d9a441;
+      --accent-2: #f2c66d;
+      --danger: #c95858;
+      --max: 1180px;
+      --radius: 24px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
-      color:var(--text);
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
       background:
-        radial-gradient(circle at top, rgba(165,31,31,0.18), transparent 34%),
-        linear-gradient(180deg, #070707 0%, #111 100%);
-      line-height:1.7;
+        radial-gradient(circle at top, rgba(217, 164, 65, 0.08), transparent 28%),
+        linear-gradient(180deg, #0a0a0c 0%, #0c0c10 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-
-    .container{
-      width:min(100% - 32px, var(--max));
-      margin:0 auto;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(10px);
-      background:rgba(9,9,9,0.72);
-      border-bottom:1px solid var(--line);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:14px 0;
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
     }
 
-    .brand{
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.95rem;
-      white-space:nowrap;
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 10, 12, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .header-right{
-      display:flex;
-      align-items:center;
-      gap:18px;
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .nav-links{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      color:var(--muted);
-      font-size:.95rem;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
     }
 
-    .nav-links a:hover{color:var(--text)}
-
-    .lang-switch{
-      display:flex;
-      gap:8px;
-      align-items:center;
+    .brand-kicker {
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
     }
 
-    .lang-btn{
-      min-width:52px;
-      height:36px;
-      padding:0 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
-      color:var(--text);
-      cursor:pointer;
-      font-weight:700;
-      transition:.2s ease;
+    .brand-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    .lang-btn:hover{
-      background:rgba(255,255,255,0.08);
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
 
-    .lang-btn.active{
-      background:linear-gradient(135deg,var(--gold),#f1c768);
-      color:#111;
-      border-color:transparent;
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 20px;
-      border-radius:999px;
-      font-weight:700;
-      border:1px solid transparent;
-      transition:.2s ease;
-      cursor:pointer;
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.86rem;
+      transition: 0.22s ease;
     }
 
-    .btn:hover{transform:translateY(-1px)}
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--gold),#f1c768);
-      color:#111;
-      box-shadow:0 10px 28px rgba(214,163,61,0.2);
+    .lang-btn.active {
+      background: var(--accent);
+      color: #111;
     }
 
-    .btn-secondary{
-      background:rgba(255,255,255,0.04);
-      border-color:var(--line);
-      color:var(--text);
+    .top-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: #f5f3ee;
+      color: #111;
+      font-weight: 800;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      transition: transform 0.18s ease, opacity 0.18s ease;
     }
 
-    .hero{
-      padding:72px 0 34px;
+    .top-cta:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
     }
 
-    .hero-wrap{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:24px;
+    main {
+      overflow: hidden;
     }
 
-    .hero-main,
-    .hero-side,
-    .section-panel,
-    .show-card,
-    .artist-card,
-    .cta-panel{
-      background:rgba(255,255,255,0.03);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+    .hero {
+      padding: 32px 0 28px;
     }
 
-    .hero-main{
-      padding:34px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 620px;
+    }
+
+    .hero-main {
+      padding: 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       background:
-        radial-gradient(circle at 15% 0%, rgba(214,163,61,.16), transparent 42%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+        radial-gradient(circle at 0% 0%, rgba(217, 164, 65, 0.14), transparent 34%);
     }
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:14px;
-      font-size:.84rem;
-      font-weight:800;
-      color:var(--gold);
-      letter-spacing:.12em;
-      text-transform:uppercase;
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(242, 198, 109, 0.24);
+      background: rgba(242, 198, 109, 0.08);
+      color: var(--accent-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    h1{
-      margin:0 0 14px;
-      font-size:clamp(2.2rem,5vw,4.7rem);
-      line-height:1.02;
-      letter-spacing:-.03em;
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
     }
 
-    .hero-sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:58ch;
-      font-size:1.05rem;
+    .hero-submeta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 18px;
     }
 
-    .hero-guest{
-      margin:0 0 18px;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
-      font-weight:700;
+    .hero-meta-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.86rem;
+      font-weight: 700;
     }
 
-    .hero-dates{
-      margin:0 0 22px;
-      padding:16px 18px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
-      color:var(--text);
-      font-weight:600;
+    .hero-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 30px;
     }
 
-    .hero-pills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin:0 0 22px;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .pill{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
-      font-size:.94rem;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.96rem;
+      transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
     }
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
     }
 
-    .hero-side{
-      min-height:100%;
-      overflow:hidden;
-      position:relative;
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+      color: #151515;
+      box-shadow: 0 12px 30px rgba(217, 164, 65, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-side {
+      position: relative;
+      min-height: 100%;
       background:
         linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.72)),
-        url("26484.jpg") center/cover;
+        url("26484.jpg");
+      background-size: cover;
+      background-position: center center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 28px;
     }
 
-    .hero-side-inner{
-      position:absolute;
-      inset:auto 24px 24px 24px;
+    .hero-side-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      background: rgba(8, 8, 10, 0.64);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 320px;
     }
 
-    .hero-side-title{
-      margin:0 0 8px;
-      font-size:1.2rem;
-      font-weight:800;
+    section {
+      padding: 28px 0;
     }
 
-    section{
-      padding:26px 0;
+    .section-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .section-title{
-      margin:0 0 10px;
-      font-size:clamp(1.7rem,3vw,2.5rem);
-      letter-spacing:-.02em;
+    .eyebrow {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-2);
+      font-weight: 800;
     }
 
-    .section-lead{
-      margin:0 0 22px;
-      color:var(--muted);
-      max-width:72ch;
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
     }
 
-    .section-panel{
-      padding:28px;
+    .section-copy {
+      max-width: 780px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
     }
 
-    .shows-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
+    .performance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
-    .show-card{
-      padding:24px;
-      position:relative;
-      overflow:hidden;
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
 
-    .show-card::before{
-      content:"";
-      position:absolute;
-      inset:0 auto 0 0;
-      width:6px;
-      background:var(--gold);
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .show-card.show-red::before{
-      background:var(--red);
+    .date-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(217, 164, 65, 0.12);
+      border: 1px solid rgba(217, 164, 65, 0.22);
+      color: var(--accent-2);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
-    .show-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:14px;
-      margin-bottom:10px;
+    .venue {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: right;
     }
 
-    .show-label{
-      display:inline-block;
-      margin-bottom:10px;
-      font-size:.8rem;
-      font-weight:800;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      color:var(--gold);
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
     }
 
-    .show-red .show-label{
-      color:#ff7a7a;
+    .card-lead {
+      margin: 0 0 20px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 700;
     }
 
-    .show-date{
-      margin:0;
-      font-size:1.5rem;
-      line-height:1.15;
+    .meta-list {
+      display: grid;
+      gap: 14px;
+      margin: 0 0 22px;
     }
 
-    .show-venue{
-      margin:6px 0 14px;
-      color:var(--muted);
-      font-weight:600;
+    .meta-item {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .show-meta{
-      display:grid;
-      gap:14px;
-      margin:18px 0;
+    .meta-item:first-child {
+      border-top: 0;
+      padding-top: 0;
     }
 
-    .meta-block{
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
+    .meta-label {
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .meta-title{
-      display:block;
-      margin-bottom:4px;
-      font-size:.8rem;
-      font-weight:800;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      color:var(--gold);
+    .meta-value {
+      color: var(--text);
+      font-size: 0.98rem;
     }
 
-    .show-red .meta-title{
-      color:#ff8b8b;
+    .meta-value p {
+      margin: 0;
     }
 
-    .meta-text{
-      color:var(--text);
-      font-size:.98rem;
-      white-space:pre-line;
+    .fine-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.93rem;
     }
 
-    .show-note{
-      color:var(--muted);
-      font-size:.95rem;
-      margin:0 0 14px;
-      white-space:pre-line;
+    .deadline {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: #ffd9d9;
+      background: rgba(201, 88, 88, 0.12);
+      border: 1px solid rgba(201, 88, 88, 0.22);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
     }
 
-    .show-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
+    .button-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
     }
 
-    .artists-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
+    .button-stack .btn {
+      flex: 1 1 auto;
     }
 
-    .artist-card{
-      padding:22px;
+    .artists-wrap {
+      display: grid;
+      gap: 18px;
     }
 
-    .artist-role{
-      font-size:.8rem;
-      font-weight:800;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      color:var(--gold);
-      margin-bottom:10px;
+    .artists-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
 
-    .artist-name{
-      margin:0 0 10px;
-      font-size:1.18rem;
-      line-height:1.35;
+    .artist-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
     }
 
-    .artist-name a{
-      color:inherit;
-      text-decoration:underline;
-      text-underline-offset:3px;
+    .artist-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
-    .artist-name a:hover{
-      opacity:0.82;
+    .artist-link:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    .artist-text{
-      margin:0;
-      color:var(--muted);
-      font-size:.96rem;
-      white-space:pre-line;
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
-    .common-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
+    .info-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
 
-    .common-item{
-      padding:18px 0;
-      border-bottom:1px solid var(--line);
+    .info-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
     }
 
-    .common-label{
-      display:block;
-      margin-bottom:5px;
-      font-size:.8rem;
-      font-weight:800;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      color:var(--gold);
+    .info-row {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .common-value{
-      font-size:.98rem;
-      color:var(--text);
-      white-space:pre-line;
+    .info-row:first-child {
+      border-top: 0;
+      padding-top: 0;
     }
 
-    .cta-panel{
-      padding:30px;
-      text-align:center;
+    .info-key {
+      color: var(--accent-2);
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .info-val {
+      color: var(--text);
+    }
+
+    .cta-section {
+      padding: 12px 0 64px;
+    }
+
+    .cta-panel {
       background:
-        linear-gradient(180deg, rgba(214,163,61,.08), rgba(255,255,255,.03));
+        linear-gradient(180deg, rgba(242,198,109,0.08), rgba(255,255,255,0.02)),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid rgba(242, 198, 109, 0.18);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: var(--shadow);
     }
 
-    .cta-panel p{
-      margin:0 auto 18px;
-      max-width:58ch;
-      color:var(--muted);
-      white-space:pre-line;
+    .cta-copy {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 800px;
     }
 
-    .footer{
-      padding:36px 0 56px;
-      color:var(--muted);
-      font-size:.93rem;
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
 
-    .footer-inner{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:space-between;
-      gap:16px;
-      border-top:1px solid var(--line);
-      padding-top:20px;
+    .cta-grid .btn {
+      min-width: 0;
+      width: 100%;
     }
 
-    .footer-inner a{
-      text-decoration:underline;
-      text-underline-offset:3px;
+    .site-footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 22px 0 34px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    @media (max-width: 980px){
-      .hero-wrap,
-      .shows-grid,
-      .artists-grid,
-      .common-grid{
-        grid-template-columns:1fr;
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .performance-grid,
+      .info-grid,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: unset;
+      }
+
+      .hero-side {
+        min-height: 420px;
+      }
+
+      .cta-grid {
+        gap: 12px;
       }
     }
 
-    @media (max-width: 820px){
-      .nav-links{display:none}
-      .header-right{margin-left:auto}
-    }
-
-    @media (max-width: 720px){
-      .hero{padding-top:38px}
-      .hero-main,.section-panel,.show-card,.artist-card,.cta-panel{padding:22px}
-      .nav{
-        align-items:flex-start;
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
       }
-      .header-right{
-        flex-direction:column;
-        align-items:flex-end;
-        gap:10px;
+
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .top-cta {
+        padding: 11px 14px;
+        font-size: 0.86rem;
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-main {
+        padding: 30px 22px;
+      }
+
+      .hero-side {
+        min-height: 320px;
+        padding: 18px;
+        background-position: center top;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .hero-copy {
+        font-size: 0.98rem;
+      }
+
+      .card,
+      .artists-panel,
+      .info-card,
+      .cta-panel {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .venue {
+        text-align: left;
+      }
+
+      .meta-item,
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .button-stack {
+        flex-direction: column;
+      }
+
+      .button-stack .btn {
+        width: 100%;
+      }
+
+      .artist-links {
+        flex-direction: column;
+      }
+
+      .artist-link {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav">
-      <a href="#" class="brand">Shono Mercy Records</a>
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-kicker">Chuck Berry Centennial</span>
+        <span class="brand-title">Chuck Berry Centennial Tokyo Series 2026</span>
+      </div>
 
-      <div class="header-right">
-        <nav class="nav-links">
-          <a href="#shows" data-ja="公演情報" data-en="Performances">公演情報</a>
-          <a href="#about" data-ja="シリーズについて" data-en="About">シリーズについて</a>
-          <a href="#artists" data-ja="出演者" data-en="Artists">出演者</a>
-          <a href="#info" data-ja="共通情報" data-en="Info">共通情報</a>
-        </nav>
-
-        <div class="lang-switch">
-          <button type="button" class="lang-btn active" data-lang="ja">JP</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <div class="header-actions">
+        <div class="lang-toggle" aria-label="Language toggle">
+          <button class="lang-btn active" type="button" data-lang-btn="ja">日本語</button>
+          <button class="lang-btn" type="button" data-lang-btn="en">EN</button>
         </div>
+        <a class="top-cta" href="#tickets">
+          <span data-ja="チケットへ" data-en="Go to Tickets">チケットへ</span>
+        </a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-wrap">
-        <div class="hero-main">
-          <span
-            class="eyebrow"
-            data-ja="Chuck Berry生誕100周年 / Tokyo 2026"
-            data-en="Chuck Berry Centennial / Tokyo 2026"
-          >Chuck Berry生誕100周年 / Tokyo 2026</span>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-main">
+            <div class="hero-label">
+              <span data-ja="東京2公演シリーズ" data-en="Two-Show Tokyo Series">東京2公演シリーズ</span>
+            </div>
 
-          <h1
-            data-ja="チャック・ベリー生誕100周年記念ライブ 東京2公演"
-            data-en="Chuck Berry Centennial Live Tokyo Two-Night Series"
-          >チャック・ベリー生誕100周年記念ライブ 東京2公演</h1>
+            <h1 data-ja="2つの夜、ひとつのルーツ。" data-en="Two Nights. One Legacy.">
+              2つの夜、ひとつのルーツ。
+            </h1>
 
-          <p
-            class="hero-sub"
-            data-ja="Chuck Berry生誕100周年を記念した東京2公演です。&#10;5月15日と5月16日に、それぞれ異なる会場・出演者で開催します。&#10;Chuck Berryの孫であるCharlie Berry（Chuck Berry III）がスペシャルゲストとして出演します。"
-            data-en="A two-show Tokyo series celebrating the 100th anniversary of Chuck Berry. The performances take place on May 15 and May 16 with different venues and lineups. Charlie Berry (Chuck Berry III), Chuck Berry’s grandson, appears as the special guest."
-          >
- ロックンロールの原点を築いた男、チャック・ベリー。
-その生誕100周年を記念し、東京で特別公演を開催。
+            <div class="hero-submeta">
+              <span class="hero-meta-chip">Tokyo / 2026.05.15–16</span>
+              <span class="hero-meta-chip">Aoyama Red Shoes / Shimokitazawa CLUB Que</span>
+            </div>
 
-孫であり正統な継承者、Charlie Berryが来日。
-この音を、生で体験できる機会はほとんどない。
-          </p>
+            <p class="hero-copy"
+              data-ja="Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。"
+              data-en="To commemorate the 100th anniversary of Chuck Berry’s birth, we are presenting a two-show series in Tokyo. Rooted in respect for the origin of rock ’n’ roll, each night offers a different venue, lineup, and atmosphere to experience this legacy in two distinct ways."
+            >
+              Chuck Berry生誕100周年を記念し、東京で2公演のシリーズイベントを開催します。ロックンロールの原点に敬意を表しながら、それぞれ異なる会場と編成で、2つの夜を通してこのレガシーを体感できる企画です。
+            </p>
 
-          <p
-            class="hero-guest"
-            data-ja="Special Guest&#10;Charlie Berry（Chuck Berry III）"
-            data-en="Special Guest&#10;Charlie Berry (Chuck Berry III)"
-          >Special Guest
-Charlie Berry（Chuck Berry III）</p>
-
-          <p
-            class="hero-dates"
-            data-ja="2026年5月15日（金） 青山 Red Shoes&#10;2026年5月16日（土） 下北沢 CLUB Que"
-            data-en="May 15, 2026 (Fri) — Aoyama Red Shoes&#10;May 16, 2026 (Sat) — Shimokitazawa CLUB Que"
-          >2026年5月15日（金） 青山 Red Shoes
-2026年5月16日（土） 下北沢 CLUB Que</p>
-
-          <div class="hero-pills">
-            <span class="pill">May 15, 2026</span>
-            <span class="pill">May 16, 2026</span>
-            <span
-              class="pill"
-              data-ja="東京2公演"
-              data-en="Tokyo 2 Shows"
-            >東京2公演</span>
-            <span
-              class="pill"
-              data-ja="特別ゲスト出演"
-              data-en="Special Guest Appearance"
-            >特別ゲスト出演</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#performances">
+                <span data-ja="公演情報を見る" data-en="View Performances">公演情報を見る</span>
+              </a>
+              <a class="btn btn-secondary" href="#tickets">
+                <span data-ja="チケット・配信情報" data-en="Tickets & Streaming">チケット・配信情報</span>
+              </a>
+            </div>
           </div>
 
-          <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="#shows"
-              data-ja="公演を見る"
-              data-en="View Performances"
-            >公演を見る</a>
-
-            <a
-              class="btn btn-secondary"
-              href="#about"
-              data-ja="シリーズについて"
-              data-en="About the Series"
-            >シリーズについて</a>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="hero-side-inner">
-            <span
-              class="eyebrow"
-              data-ja="Chuck Berry Centennial Tokyo Series 2026"
-              data-en="Chuck Berry Centennial Tokyo Series 2026"
-            >Chuck Berry Centennial Tokyo Series 2026</span>
-
-            <p
-              class="hero-side-title"
-              data-ja="2日間開催の記念ライブ"
-              data-en="A Two-Night Commemorative Live Series"
-            >2日間開催の記念ライブ</p>
-
-            <p
-              data-ja="5月15日は青山 Red Shoes、5月16日は下北沢 CLUB Queで開催します。&#10;日程ごとに会場、出演者、チケット内容が異なります。"
-              data-en="The first show takes place at Aoyama Red Shoes on May 15, and the second at Shimokitazawa CLUB Que on May 16. Venue, lineup, and ticket details differ for each date."
-            >5月15日は青山 Red Shoes、5月16日は下北沢 CLUB Queで開催します。
-日程ごとに会場、出演者、チケット内容が異なります。</p>
+          <div class="hero-side" aria-label="Chuck Berry Centennial Tokyo Series image">
+            <div class="hero-side-badge">Chuck Berry Centennial Tokyo Series 2026</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="shows">
+    <section id="performances">
       <div class="container">
-        <h2
-          class="section-title"
-          data-ja="公演情報"
-          data-en="Performances"
-        >公演情報</h2>
+        <div class="section-head">
+          <span class="eyebrow">Performances</span>
+          <h2 data-ja="2公演情報" data-en="Performances">2公演情報</h2>
+          <p class="section-copy"
+            data-ja="2つの夜、それぞれ異なる会場と編成で、Chuck Berryのレガシーを東京に鳴らします。"
+            data-en="Across two nights, different venues and lineups bring Chuck Berry’s legacy to life in Tokyo."
+          >
+            2つの夜、それぞれ異なる会場と編成で、Chuck Berryのレガシーを東京に鳴らします。
+          </p>
+        </div>
 
-        <p
-          class="section-lead"
-          data-ja="2公演の詳細です。日程ごとに会場・出演者・チケット情報をご確認ください。"
-          data-en="Here are the details for both performances. Please check the venue, lineup, and ticket information for each date."
-        >
-          2公演の詳細です。日程ごとに会場・出演者・チケット情報をご確認ください。
-        </p>
-
-        <div class="shows-grid">
-          <article class="show-card">
-            <div class="show-top">
-              <div>
-                <span
-                  class="show-label"
-                  data-ja="Performance 01"
-                  data-en="Performance 01"
-                >Performance 01</span>
-
-                <h3
-                  class="show-date"
-                  data-ja="2026年5月15日（金）"
-                  data-en="May 15, 2026 (Fri)"
-                >2026年5月15日（金）</h3>
-                <p class="show-venue">Aoyama Red Shoes</p>
-              </div>
+        <div class="performance-grid">
+          <article class="card">
+            <div class="card-top">
+              <span class="date-badge">2026.05.15 Fri</span>
+              <div class="venue">Aoyama Red Shoes</div>
             </div>
 
-            <div class="show-meta">
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="タイトル"
-                  data-en="Title"
-                >タイトル</span>
-                <div
-                  class="meta-text"
-                  data-ja="チャック・ベリー生誕100周年記念ライブ ― ロックンロールの原点 東京2026 ―"
-                  data-en="Chuck Berry Centennial Live – Rock ’n’ Roll Legacy Tokyo 2026"
-                >
-                  チャック・ベリー生誕100周年記念ライブ ― ロックンロールの原点 東京2026 ―
-                </div>
-              </div>
+            <h3 class="card-title"
+              data-ja="チャック・ベリー生誕100周年記念ライブ ― ロックンロールの原点 東京2026 ―"
+              data-en="Chuck Berry Centennial Live – Rock ’n’ Roll Legacy Tokyo 2026"
+            >
+              チャック・ベリー生誕100周年記念ライブ ― ロックンロールの原点 東京2026 ―
+            </h3>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="時間"
-                  data-en="Time"
-                >時間</span>
-                <div
-                  class="meta-text"
+            <p class="card-lead"
+              data-ja="シリーズの幕開けを、至近距離で体感する特別公演。"
+              data-en="An intimate opening night to experience the series up close."
+            >
+              シリーズの幕開けを、至近距離で体感する特別公演。
+            </p>
+
+            <div class="meta-list">
+              <div class="meta-item">
+                <div class="meta-label" data-ja="時間" data-en="Time">時間</div>
+                <div class="meta-value"
                   data-ja="18:00 入場開始 / 19:00 開演 / 23:00 終演"
                   data-en="Doors 18:00 / Start 19:00 / End 23:00"
                 >
@@ -691,30 +804,19 @@ Charlie Berry（Chuck Berry III）</p>
                 </div>
               </div>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="出演"
-                  data-en="Lineup"
-                >出演</span>
-                <div
-                  class="meta-text"
-                  data-ja="スペシャルゲスト：Charlie Berry（Chuck Berry III）&#10;出演バンド：THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA） with Shono Mercy"
-                  data-en="Special Guest: Charlie Berry (Chuck Berry III)&#10;Performing Band: THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
+              <div class="meta-item">
+                <div class="meta-label" data-ja="出演" data-en="Lineup">出演</div>
+                <div class="meta-value"
+                  data-ja="スペシャルゲスト：Charles Berry (Chuck Berry III) / 出演バンド：THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
+                  data-en="Special Guest: Charles Berry (Chuck Berry III) / Performing Band: THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy"
                 >
-                  スペシャルゲスト：Charlie Berry（Chuck Berry III）
-                  出演バンド：THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA） with Shono Mercy
+                  スペシャルゲスト：Charles Berry (Chuck Berry III) / 出演バンド：THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) with Shono Mercy
                 </div>
               </div>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="チケット"
-                  data-en="Ticket"
-                >チケット</span>
-                <div
-                  class="meta-text"
+              <div class="meta-item">
+                <div class="meta-label" data-ja="チケット" data-en="Tickets">チケット</div>
+                <div class="meta-value"
                   data-ja="優先入場チケット ¥8,000 / 通常チケット ¥6,500"
                   data-en="Priority Entry Ticket ¥8,000 / Regular Entry Ticket ¥6,500"
                 >
@@ -722,89 +824,65 @@ Charlie Berry（Chuck Berry III）</p>
                 </div>
               </div>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="販売締切"
-                  data-en="Sales Deadline"
-                >販売締切</span>
-                <div class="meta-text">2026/05/13 11:29</div>
+              <div class="meta-item">
+                <div class="meta-label" data-ja="案内" data-en="About">案内</div>
+                <div class="meta-value">
+                  <p
+                    data-ja="5月15日は、より近い距離感でこのシリーズのはじまりを体感できる特別公演です。演奏と空間の近さ、その場でしか生まれない空気を味わえる一夜になります。"
+                    data-en="The May 15 show is a special performance that lets the audience experience the beginning of the series at closer range. It is a night defined by intimacy, live energy, and the atmosphere that only emerges in the room."
+                  >
+                    5月15日は、より近い距離感でこのシリーズのはじまりを体感できる特別公演です。演奏と空間の近さ、その場でしか生まれない空気を味わえる一夜になります。
+                  </p>
+                  <p class="fine-note"
+                    data-ja="予約・支払い完了後、整理番号付き確認メールをお送りします。整理番号は予約完了順に発行されます。"
+                    data-en="After reservation and payment are completed, a confirmation email with your entry number will be sent. Entry numbers are issued in order of reservation completion."
+                  >
+                    予約・支払い完了後、整理番号付き確認メールをお送りします。整理番号は予約完了順に発行されます。
+                  </p>
+                  <div class="deadline">
+                    <span data-ja="販売締切" data-en="Sales Deadline">販売締切</span>
+                    <span>2026/05/13 11:29</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <p
-              class="show-note"
-              data-ja="5月15日は青山 Red Shoesで開催する公演です。&#10;出演者との距離が近い会場で、ライブを間近で楽しめます。&#10;座席数の少ない会場のため、チケット数には限りがあります。"
-              data-en="The May 15 performance takes place at Aoyama Red Shoes. It is an intimate venue where you can enjoy the live show up close. Ticket quantity is limited due to the smaller capacity."
-            >
-              5月15日は青山 Red Shoesで開催する公演です。
-              出演者との距離が近い会場で、ライブを間近で楽しめます。
-              座席数の少ない会場のため、チケット数には限りがあります。
-            </p>
-
-            <p
-              class="show-note"
-              data-ja="予約と支払い完了後、整理番号付きの確認メールをお送りします。&#10;整理番号は予約完了順です。"
-              data-en="After reservation and payment are completed, a confirmation email with your entry number will be sent. Entry numbers are issued in order of reservation completion."
-            >
-              予約と支払い完了後、整理番号付きの確認メールをお送りします。
-              整理番号は予約完了順です。
-            </p>
-
-            <div class="show-actions">
+            <div class="button-stack">
               <a
                 class="btn btn-primary"
                 href="https://ticket-system-2026.netlify.app/chuck100th-05152026"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-ja="5/15 チケット"
-                data-en="Tickets for 5/15"
-              >5/15 チケット</a>
+              >
+                <span data-ja="5/15 チケット" data-en="5/15 Tickets">5/15 チケット</span>
+              </a>
             </div>
           </article>
 
-          <article class="show-card show-red">
-            <div class="show-top">
-              <div>
-                <span
-                  class="show-label"
-                  data-ja="Performance 02"
-                  data-en="Performance 02"
-                >Performance 02</span>
-
-                <h3
-                  class="show-date"
-                  data-ja="2026年5月16日（土）"
-                  data-en="May 16, 2026 (Sat)"
-                >2026年5月16日（土）</h3>
-                <p class="show-venue">Shimokitazawa CLUB Que</p>
-              </div>
+          <article class="card">
+            <div class="card-top">
+              <span class="date-badge">2026.05.16 Sat</span>
+              <div class="venue">Shimokitazawa CLUB Que</div>
             </div>
 
-            <div class="show-meta">
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="タイトル"
-                  data-en="Title"
-                >タイトル</span>
-                <div
-                  class="meta-text"
-                  data-ja="チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ"
-                  data-en="Chuck Berry 100th Anniversary Rock ’n’ Roll Legacy Tokyo 2026 with The Voodoo Club"
-                >
-                  チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ
-                </div>
-              </div>
+            <h3 class="card-title"
+              data-ja="チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ"
+              data-en="Chuck Berry 100th Anniversary Rock ’n’ Roll Legacy Tokyo 2026 with The Voodoo Club"
+            >
+              チャック・ベリー生誕100周年 ロックンロール・レガシー東京2026 with 暴動クラブ
+            </h3>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="時間"
-                  data-en="Time"
-                >時間</span>
-                <div
-                  class="meta-text"
+            <p class="card-lead"
+              data-ja="暴動クラブとの共演で広がる、もうひとつのレガシー。"
+              data-en="An expanded second night featuring a special collaboration with The Voodoo Club."
+            >
+              暴動クラブとの共演で広がる、もうひとつのレガシー。
+            </p>
+
+            <div class="meta-list">
+              <div class="meta-item">
+                <div class="meta-label" data-ja="時間" data-en="Time">時間</div>
+                <div class="meta-value"
                   data-ja="18:15 開場 / 19:00 開演"
                   data-en="Doors 18:15 / Start 19:00"
                 >
@@ -812,260 +890,158 @@ Charlie Berry（Chuck Berry III）</p>
                 </div>
               </div>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="出演"
-                  data-en="Lineup"
-                >出演</span>
-                <div
-                  class="meta-text"
-                  data-ja="Charlie Berry（Chuck Berry III） from USA&#10;THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA）&#10;Shono Mercy&#10;暴動クラブ"
-                  data-en="Charlie Berry (Chuck Berry III) from USA&#10;THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA)&#10;Shono Mercy&#10;The Voodoo Club"
+              <div class="meta-item">
+                <div class="meta-label" data-ja="出演" data-en="Lineup">出演</div>
+                <div class="meta-value"
+                  data-ja="Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / 暴動クラブ"
+                  data-en="Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / The Voodoo Club"
                 >
-                  Charlie Berry（Chuck Berry III） from USA
-                  THE BROKEN BLUES BAND feat EZRA LEE（from AUSTRALIA）
-                  Shono Mercy
-                  暴動クラブ
+                  Charles Berry (Chuck Berry III) from USA / THE BROKEN BLUES BAND feat EZRA LEE (from AUSTRALIA) / Shono Mercy / 暴動クラブ
                 </div>
               </div>
 
-              <div class="meta-block">
-                <span
-                  class="meta-title"
-                  data-ja="チケット"
-                  data-en="Ticket"
-                >チケット</span>
-                <div
-                  class="meta-text"
+              <div class="meta-item">
+                <div class="meta-label" data-ja="チケット" data-en="Tickets">チケット</div>
+                <div class="meta-value"
                   data-ja="前売 ¥5,500 / 当日 ¥6,100 [+1D] / 配信 ¥3,300"
                   data-en="Advance ¥5,500 / Door ¥6,100 [+1D] / Streaming ¥3,300"
                 >
                   前売 ¥5,500 / 当日 ¥6,100 [+1D] / 配信 ¥3,300
                 </div>
               </div>
+
+              <div class="meta-item">
+                <div class="meta-label" data-ja="案内" data-en="About">案内</div>
+                <div class="meta-value"
+                  data-ja="5月16日は、日本のロックンロールバンド「暴動クラブ」との一夜限りの共演公演です。共演色の強いライブハウス公演として、シリーズにもうひとつの表情を加える拡張編となります。"
+                  data-en="The May 16 show is a one-night-only collaboration with the Japanese rock ’n’ roll band The Voodoo Club. As a live-house performance with a stronger collaborative focus, it serves as an expanded chapter of the series."
+                >
+                  5月16日は、日本のロックンロールバンド「暴動クラブ」との一夜限りの共演公演です。共演色の強いライブハウス公演として、シリーズにもうひとつの表情を加える拡張編となります。
+                </div>
+              </div>
             </div>
 
-            <p
-              class="show-note"
-              data-ja="5月16日は下北沢 CLUB Queで開催する公演です。&#10;暴動クラブを迎えた一夜限りの共演ライブです。&#10;ライブハウス形式の公演で、よりロックンロール色の強いステージになります。"
-              data-en="The May 16 performance takes place at Shimokitazawa CLUB Que. It is a one-night-only collaborative live show featuring The Voodoo Club. The live-house setting gives this stage a stronger rock ’n’ roll atmosphere."
-            >
-              5月16日は下北沢 CLUB Queで開催する公演です。
-              暴動クラブを迎えた一夜限りの共演ライブです。
-              ライブハウス形式の公演で、よりロックンロール色の強いステージになります。
-            </p>
-
-            <div class="show-actions">
+            <div class="button-stack">
               <a
                 class="btn btn-primary"
                 href="https://eplus.jp/sf/detail/4492870001-P0030001"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-ja="5/16 会場チケット"
-                data-en="Venue Tickets for 5/16"
-              >5/16 会場チケット</a>
-
+              >
+                <span data-ja="5/16 会場チケット" data-en="5/16 Venue Tickets">5/16 会場チケット</span>
+              </a>
               <a
                 class="btn btn-secondary"
                 href="https://eplus.jp/sf/detail/4493890001-P0030001"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-ja="5/16 配信"
-                data-en="Streaming for 5/16"
-              >5/16 配信</a>
+              >
+                <span data-ja="5/16 Streaming+" data-en="Streaming+ for 5/16">5/16 Streaming+</span>
+              </a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-panel">
-          <h2
-            class="section-title"
-            data-ja="シリーズについて"
-            data-en="About the Series"
-          >シリーズについて</h2>
-
-          <p
-            class="section-lead"
-            data-ja="Chuck Berry生誕100周年を記念して開催する東京2公演です。&#10;2日間それぞれ異なる内容で、Chuck Berryの音楽をたどるライブイベントです。"
-            data-en="This is a two-show Tokyo series held to celebrate the 100th anniversary of Chuck Berry. Each night offers a different program and follows the musical legacy of Chuck Berry."
+    <section id="artists">
+      <div class="container artists-wrap">
+        <div class="section-head">
+          <span class="eyebrow" data-ja="出演者" data-en="Artists">出演者</span>
+          <h2 data-ja="出演者リンク" data-en="Artist Links">出演者リンク</h2>
+          <p class="section-copy"
+            data-ja="各出演者の詳細は、以下のリンクからご確認いただけます。"
+            data-en="You can explore the featured artists through the links below."
           >
-            Chuck Berry生誕100周年を記念して開催する東京2公演です。
-            2日間それぞれ異なる内容で、Chuck Berryの音楽をたどるライブイベントです。
+            各出演者の詳細は、以下のリンクからご確認いただけます。
           </p>
         </div>
-      </div>
-    </section>
 
-    <section id="artists">
-      <div class="container">
-        <h2
-          class="section-title"
-          data-ja="出演者"
-          data-en="Featured Guests & Artists"
-        >出演者</h2>
-
-        <p
-          class="section-lead"
-          data-ja="各公演の出演者です。日程によって出演内容が異なります。"
-          data-en="Here are the artists for each performance. The lineup differs depending on the date."
-        >
-          各公演の出演者です。日程によって出演内容が異なります。
-        </p>
-
-        <div class="artists-grid">
-          <article class="artist-card">
-            <div
-              class="artist-role"
-              data-ja="スペシャルゲスト"
-              data-en="Special Guest"
-            >スペシャルゲスト</div>
-
-            <h3 class="artist-name">Charlie Berry / Chuck Berry III</h3>
-
-            <p
-              class="artist-text"
-              data-ja="Chuck Berry IIIとして出演するスペシャルゲストです。&#10;本シリーズの中心となるゲストとして参加します。"
-              data-en="A special guest appearing as Chuck Berry III. He joins the series as its central guest."
+        <div class="artists-panel">
+          <div class="artist-links">
+            <a
+              class="artist-link"
+              href="https://sites.google.com/view/broken-blues-band/home"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Chuck Berry IIIとして出演するスペシャルゲストです。
-              本シリーズの中心となるゲストとして参加します。
-            </p>
-          </article>
-
-          <article class="artist-card">
-            <div
-              class="artist-role"
-              data-ja="バンド"
-              data-en="Band"
-            >バンド</div>
-
-            <h3 class="artist-name">
-              <a href="https://sites.google.com/view/broken-blues-band/home" target="_blank" rel="noopener noreferrer">
-                THE BROKEN BLUES BAND
-              </a>
-              <br>
-              <a href="https://sites.google.com/view/boogie-woogie-action-japan/ezra-lee/about-ezra" target="_blank" rel="noopener noreferrer">
-                feat EZRA LEE (from AUSTRALIA)
-              </a>
-            </h3>
-
-            <p
-              class="artist-text"
-              data-ja="THE BROKEN BLUES BANDに、EZRA LEEを迎えた特別編成です。"
-              data-en="A special lineup featuring THE BROKEN BLUES BAND joined by EZRA LEE."
+              THE BROKEN BLUES BAND
+            </a>
+            <a
+              class="artist-link"
+              href="https://sites.google.com/view/boogie-woogie-action-japan/ezra-lee/about-ezra"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              THE BROKEN BLUES BANDに、EZRA LEEを迎えた特別編成です。
-            </p>
-          </article>
-
-          <article class="artist-card">
-            <div
-              class="artist-role"
-              data-ja="主催 / 出演"
-              data-en="Host / Artist"
-            >主催 / 出演</div>
-
-            <h3 class="artist-name">Shono Mercy</h3>
-
-            <p
-              class="artist-text"
-              data-ja="本シリーズの主催・出演です。&#10;2公演を通して出演します。"
-              data-en="Organizer and performer of this series. Appears across both performances."
+              EZRA LEE (from AUSTRALIA)
+            </a>
+            <a
+              class="artist-link"
+              href="https://voodooclub.fanpla.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              本シリーズの主催・出演です。
-              2公演を通して出演します。
-            </p>
-          </article>
-
-          <article class="artist-card">
-            <div
-              class="artist-role"
-              data-ja="ゲストバンド"
-              data-en="Guest Band"
-            >ゲストバンド</div>
-
-            <h3 class="artist-name">
-              <a href="https://voodooclub.fanpla.jp/" target="_blank" rel="noopener noreferrer">
-                暴動クラブ / The Voodoo Club
-              </a>
-            </h3>
-
-            <p
-              class="artist-text"
-              data-ja="5月16日 CLUB Que公演に出演する日本のロックンロールバンドです。"
-              data-en="A Japanese rock ’n’ roll band appearing on the May 16 CLUB Que performance."
-            >
-              5月16日 CLUB Que公演に出演する日本のロックンロールバンドです。
-            </p>
-          </article>
+              <span data-ja="暴動クラブ" data-en="The Voodoo Club">暴動クラブ</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="info">
       <div class="container">
-        <div class="section-panel">
-          <h2
-            class="section-title"
-            data-ja="共通情報"
-            data-en="Common Info"
-          >共通情報</h2>
+        <div class="section-head">
+          <span class="eyebrow" data-ja="共通情報" data-en="General Info">共通情報</span>
+          <h2 data-ja="シリーズについて" data-en="About the Series">シリーズについて</h2>
+        </div>
 
-          <div class="common-grid">
-            <div>
-              <div class="common-item">
-                <span
-                  class="common-label"
-                  data-ja="主催"
-                  data-en="Presented by"
-                >主催</span>
-                <div class="common-value">Shono Mercy Records</div>
-              </div>
-
-              <div class="common-item">
-                <span
-                  class="common-label"
-                  data-ja="問い合わせ"
-                  data-en="Inquiry"
-                >問い合わせ</span>
-                <div class="common-value">shono.mercy.music@gmail.com</div>
-              </div>
-            </div>
-
-            <div>
-              <div class="common-item">
-                <span
-                  class="common-label"
-                  data-ja="イベント概要"
-                  data-en="Series Overview"
-                >イベント概要</span>
-                <div
-                  class="common-value"
-                  data-ja="Chuck Berry生誕100周年記念 東京2公演"
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-list">
+              <div class="info-row">
+                <div class="info-key" data-ja="概要" data-en="Overview">概要</div>
+                <div class="info-val"
+                  data-ja="Chuck Berry生誕100周年を記念した東京2公演シリーズ"
                   data-en="A two-show Tokyo series celebrating the 100th anniversary of Chuck Berry"
                 >
-                  Chuck Berry生誕100周年記念 東京2公演
+                  Chuck Berry生誕100周年を記念した東京2公演シリーズ
                 </div>
               </div>
 
-              <div class="common-item">
-                <span
-                  class="common-label"
-                  data-ja="チケット案内"
-                  data-en="Ticket Guidance"
-                >チケット案内</span>
-                <div
-                  class="common-value"
-                  data-ja="各公演の詳細とチケット情報は、各ボタンからご確認ください。"
+              <div class="info-row">
+                <div class="info-key" data-ja="主催" data-en="Organizer">主催</div>
+                <div class="info-val">Shono Mercy Records</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-key" data-ja="問い合わせ" data-en="Contact">問い合わせ</div>
+                <div class="info-val">
+                  <a href="mailto:shono.mercy.music@gmail.com">shono.mercy.music@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-list">
+              <div class="info-row">
+                <div class="info-key" data-ja="チケット案内" data-en="Ticket Guide">チケット案内</div>
+                <div class="info-val"
+                  data-ja="各公演の詳細・チケット購入は、それぞれのボタンからご確認ください。"
                   data-en="Please use the button for each performance to view details and ticket information."
                 >
-                  各公演の詳細とチケット情報は、各ボタンからご確認ください。
+                  各公演の詳細・チケット購入は、それぞれのボタンからご確認ください。
                 </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-key" data-ja="日程" data-en="Dates">日程</div>
+                <div class="info-val">2026.05.15 Fri / 2026.05.16 Sat</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-key" data-ja="会場" data-en="Venues">会場</div>
+                <div class="info-val">Aoyama Red Shoes / Shimokitazawa CLUB Que</div>
               </div>
             </div>
           </div>
@@ -1073,90 +1049,93 @@ Charlie Berry（Chuck Berry III）</p>
       </div>
     </section>
 
-    <section>
+    <section class="cta-section" id="tickets">
       <div class="container">
         <div class="cta-panel">
-          <h2
-            class="section-title"
-            data-ja="チケット・配信情報"
-            data-en="Tickets & Streaming"
-          >チケット・配信情報</h2>
+          <div class="section-head">
+            <span class="eyebrow">Access</span>
+            <h2 data-ja="チケット・配信情報" data-en="Tickets & Streaming">チケット・配信情報</h2>
+            <p class="cta-copy"
+              data-ja="ご来場・配信視聴ともに、各公演のボタンからお進みください。"
+              data-en="Use the button for each performance to access venue tickets or streaming information."
+            >
+              ご来場・配信視聴ともに、各公演のボタンからお進みください。
+            </p>
+          </div>
 
-          <p
-            data-ja="チケットは各公演ごとに販売しています。&#10;ご希望の公演のボタンからご予約ください。"
-            data-en="Tickets are sold separately for each performance. Please use the button for the show you would like to attend."
-          >
-            チケットは各公演ごとに販売しています。
-            ご希望の公演のボタンからご予約ください。
-          </p>
-
-          <div class="hero-actions" style="justify-content:center;">
+          <div class="cta-grid">
             <a
               class="btn btn-primary"
               href="https://ticket-system-2026.netlify.app/chuck100th-05152026"
               target="_blank"
               rel="noopener noreferrer"
-              data-ja="5/15 チケット"
-              data-en="Tickets for 5/15"
-            >5/15 チケット</a>
+            >
+              <span data-ja="5/15 チケット" data-en="5/15 Tickets">5/15 チケット</span>
+            </a>
 
             <a
-              class="btn btn-secondary"
+              class="btn btn-primary"
               href="https://eplus.jp/sf/detail/4492870001-P0030001"
               target="_blank"
               rel="noopener noreferrer"
-              data-ja="5/16 会場チケット"
-              data-en="Venue Tickets for 5/16"
-            >5/16 会場チケット</a>
+            >
+              <span data-ja="5/16 会場チケット" data-en="5/16 Venue Tickets">5/16 会場チケット</span>
+            </a>
 
             <a
               class="btn btn-secondary"
               href="https://eplus.jp/sf/detail/4493890001-P0030001"
               target="_blank"
               rel="noopener noreferrer"
-              data-ja="5/16 配信"
-              data-en="Streaming for 5/16"
-            >5/16 配信</a>
+            >
+              <span data-ja="5/16 Streaming+" data-en="Streaming+ for 5/16">5/16 Streaming+</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
+      <div>© 2026 Shono Mercy Records</div>
       <div>Chuck Berry Centennial Tokyo Series 2026</div>
-      <div>Presented by Shono Mercy Records</div>
-      <div>Contact: shono.mercy.music@gmail.com</div>
     </div>
   </footer>
 
   <script>
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
+    (function () {
+      const STORAGE_KEY = "cbtokyo_lang";
+      const buttons = document.querySelectorAll("[data-lang-btn]");
+      const translatable = document.querySelectorAll("[data-ja][data-en]");
 
-      document.querySelectorAll('[data-ja][data-en]').forEach(el => {
-        const text = el.getAttribute(`data-${lang}`);
-        if (text) el.textContent = text;
-      });
+      function applyLanguage(lang) {
+        const nextLang = lang === "en" ? "en" : "ja";
+        document.documentElement.lang = nextLang;
 
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
+        translatable.forEach((el) => {
+          const text = el.getAttribute("data-" + nextLang);
+          if (text !== null) {
+            el.textContent = text;
+          }
+        });
 
-      localStorage.setItem('siteLanguage', lang);
-    }
+        buttons.forEach((btn) => {
+          btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === nextLang);
+        });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('siteLanguage') || 'ja';
-      setLanguage(savedLang);
+        localStorage.setItem(STORAGE_KEY, nextLang);
+      }
 
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          setLanguage(btn.dataset.lang);
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          applyLanguage(btn.getAttribute("data-lang-btn"));
         });
       });
-    });
+
+      const saved = localStorage.getItem(STORAGE_KEY);
+      applyLanguage(saved || "ja");
+    })();
   </script>
 </body>
 </html>
